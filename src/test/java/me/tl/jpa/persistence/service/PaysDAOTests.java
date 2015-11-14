@@ -84,7 +84,7 @@ public class PaysDAOTests {
     }
 
     @Test
-    public void testName() throws Exception {
+    public void testJPAQueryFindAll() throws Exception {
 
         JPAQuery query = new JPAQuery(entityManager).from(qPays);
         query.where(qPays.englishName.startsWithIgnoreCase("TU"));
