@@ -80,6 +80,11 @@ public class PaysDAOTests {
 
         PageRequest pageRequest  = new PageRequest(0, 10, qSort);
         final Page<Pays> page = this.paysDAO.findAll(pageRequest);
+
+        // 241 total
+        // 25 pages
+        Assert.assertEquals(25, page.getTotalPages());
+
         return;
     }
 
