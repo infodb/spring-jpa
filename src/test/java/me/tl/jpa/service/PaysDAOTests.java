@@ -4,6 +4,7 @@ import com.mysema.query.jpa.impl.JPAQuery;
 import com.mysema.query.types.Order;
 import com.mysema.query.types.OrderSpecifier;
 import com.mysema.query.types.Predicate;
+import com.mysema.query.types.path.EntityPathBase;
 import com.mysema.query.types.path.PathBuilder;
 import me.tl.jpa.config.PersistenceConfig;
 import me.tl.jpa.persistence.dao.PaysDAO;
@@ -25,8 +26,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceConfig.class}, loader = AnnotationConfigContextLoader.class)
@@ -86,6 +86,7 @@ public class PaysDAOTests {
         final Page<Pays> page = this.paysDAO.findAll(pageRequest);
 
         // 241 total
+        Assert.assertEquals(241, page.getTotalElements());
         // 25 pages
         Assert.assertEquals(25, page.getTotalPages());
 
@@ -101,6 +102,9 @@ public class PaysDAOTests {
 
         final List<Pays> list = query.list(QPays.pays);
 
+        final int size = list.size();
+
+        Assert.assertEquals(5, size);
         return;
 
     }
@@ -143,11 +147,11 @@ public class PaysDAOTests {
         // order by
         final Sort sort = pageRequest.getSort();
         if (sort != null) {
-            PathBuilder<?> orderByExpression = new PathBuilder(Pays.class, QPays.pays.getMetadata());
+            final PathBuilder<Pays> orderByExpression = new PathBuilder(Pays.class, QPays.pays.getMetadata());
             for (Sort.Order sortOrder : sort) {
                 final boolean ascending = sortOrder.isAscending();
                 Order order = (ascending) ? Order.ASC : Order.DESC;
-                final PathBuilder<Object> property = orderByExpression.get(sortOrder.getProperty());
+                final PathBuilder<?> property = orderByExpression.get(sortOrder.getProperty());
                 query.orderBy(new OrderSpecifier(order, property));
             }
         }
@@ -156,7 +160,7 @@ public class PaysDAOTests {
         Page<PaysProjectionDTO> page = new PageImpl<>(list, pageRequest, count);
 
         final long totalElements = page.getTotalElements();
-
+        Assert.assertEquals(241, totalElements);
     }
 
     @Test
@@ -179,6 +183,7 @@ public class PaysDAOTests {
         final Page<PaysProjectionDTO> page = new PageImpl<>(list, pageRequest, count);
 
         final long totalElements = page.getTotalElements();
+        Assert.assertEquals(241, totalElements);
     }
 
     //=== utils
@@ -186,5 +191,4 @@ public class PaysDAOTests {
     private JPAQuery newJPAQuery() {
         return new JPAQuery(entityManager);
     }
-
 }

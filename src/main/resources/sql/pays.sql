@@ -11,10 +11,6 @@ CREATE TABLE IF NOT EXISTS pays (
   UNIQUE KEY code_unique (code)
 );
 
---
--- Dumping data for table pays
---
-
 INSERT INTO pays (id, code, alpha2, alpha3, nom_en_gb, nom_fr_fr) VALUES
 (1, 4, 'AF', 'AFG', 'Afghanistan', 'Afghanistan'),
 (2, 8, 'AL', 'ALB', 'Albania', 'Albanie'),
