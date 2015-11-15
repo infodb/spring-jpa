@@ -1,8 +1,8 @@
-package me.tl.jpa.persistence.service.pays.impl;
+package me.tl.jpa.service.pays.impl;
 
 import me.tl.jpa.persistence.dao.PaysDAO;
-import me.tl.jpa.persistence.service.pays.api.PaysService;
-import me.tl.jpa.persistence.service.pays.dto.PaysDTO;
+import me.tl.jpa.service.pays.api.PaysService;
+import me.tl.jpa.service.pays.dto.PaysDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

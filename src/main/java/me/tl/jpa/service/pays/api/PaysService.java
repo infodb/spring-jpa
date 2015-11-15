@@ -1,6 +1,6 @@
-package me.tl.jpa.persistence.service.pays.api;
+package me.tl.jpa.service.pays.api;
 
-import me.tl.jpa.persistence.service.pays.dto.PaysDTO;
+import me.tl.jpa.service.pays.dto.PaysDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

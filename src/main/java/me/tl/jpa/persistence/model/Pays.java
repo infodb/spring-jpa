@@ -94,4 +94,10 @@ public class Pays extends BasicEntity{
                 ", frenchName='" + frenchName + '\'' +
                 "} " + super.toString();
     }
+
+    public interface Fields {
+        String FRENCH_NAME = "frenchName";
+        String ENGLISH_NAME = "englishName";
+        String ID = "id";
+    }
 }

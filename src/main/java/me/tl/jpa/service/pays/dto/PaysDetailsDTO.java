@@ -1,4 +1,4 @@
-package me.tl.jpa.persistence.service.pays.dto;
+package me.tl.jpa.service.pays.dto;
 
 /**
  * Created by thierry on 14/11/2015.

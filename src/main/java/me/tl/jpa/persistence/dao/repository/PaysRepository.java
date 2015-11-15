@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class PaysRepository extends AbstractRepository{
 
+
     private final DAO<Pays> dao;
 
     private final QPays qPays = QPays.pays;

@@ -1,4 +1,4 @@
-package me.tl.jpa.persistence.service.developer.dto;
+package me.tl.jpa.service.developer.dto;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

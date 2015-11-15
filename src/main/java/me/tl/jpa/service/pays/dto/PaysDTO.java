@@ -1,4 +1,4 @@
-package me.tl.jpa.persistence.service.pays.dto;
+package me.tl.jpa.service.pays.dto;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 

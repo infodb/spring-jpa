@@ -1,7 +1,7 @@
-package me.tl.jpa.persistence.service.developer.impl;
+package me.tl.jpa.service.developer.impl;
 
 import me.tl.jpa.persistence.dao.repository.DeveloperRepository;
-import me.tl.jpa.persistence.service.developer.api.DeveloperService;
+import me.tl.jpa.service.developer.api.DeveloperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
