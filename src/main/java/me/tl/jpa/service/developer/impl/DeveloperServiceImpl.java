@@ -1,6 +1,7 @@
 package me.tl.jpa.service.developer.impl;
 
 import me.tl.jpa.persistence.dao.repository.DeveloperRepository;
+import me.tl.jpa.service.core.AbstractCrudService;
 import me.tl.jpa.service.developer.api.DeveloperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class DeveloperServiceImpl implements DeveloperService {
+public class DeveloperServiceImpl extends AbstractCrudService implements DeveloperService {
 
     private final DeveloperRepository repository;
 
