@@ -6,5 +6,8 @@ package me.tl.jpa.service.core;
 public interface CrudService {
 
 
+    long countAll();
+
+
 
 }

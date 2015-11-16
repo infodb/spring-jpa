@@ -21,4 +21,9 @@ public class DeveloperServiceImpl extends AbstractCrudService implements Develop
     public DeveloperServiceImpl(DeveloperRepository repository){
         this.repository = repository;
     }
+
+    @Override
+    protected long countAll() {
+        return 0L;
+    }
 }
